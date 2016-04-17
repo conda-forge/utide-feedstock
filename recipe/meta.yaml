@@ -5,9 +5,9 @@ package:
     version: {{ version }}
 
 source:
-    fn: {{ version }}.tar.gz
-    url: https://github.com/wesleybowman/UTide/archive/{{ version }}.tar.gz
-    sha256: fdf2891f5860edaec034ca2b0f2bf05d1c23f79cab6fb9c59c9c273bde9b34a2
+    fn: UTide-{{ version }}.tar.gz
+    url: https://pypi.python.org/packages/source/U/UTide/UTide-{{ version }}.tar.gz
+    md5: 8b97d5355bfd37889a0b2a8ad8e376a4
 
 build:
     number: 0
