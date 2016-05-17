@@ -5,7 +5,7 @@ Home: https://github.com/wesleybowman/UTide
 
 Package license: MIT
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Python distribution of the MatLab package UTide
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/utide-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/utide-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/utide-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/utide-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/utide-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/utide-feedstock/branch/master)
