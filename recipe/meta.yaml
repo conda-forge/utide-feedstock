@@ -1,4 +1,4 @@
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: utide
@@ -6,17 +6,17 @@ package:
 
 source:
   url: https://pypi.io/packages/source/U/UTide/UTide-{{ version }}.tar.gz
-  sha256: 2382cd3091f933bbdf9850c9301237050c92fa5c63b9336e72878963b9f54f92
+  sha256: e6348b0f239057227b99b245f506ea93dd7f050c01717e4b9323e862045a5919
 
 build:
   number: 0
   noarch: python
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - numpy
