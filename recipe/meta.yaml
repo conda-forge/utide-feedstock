@@ -1,4 +1,4 @@
-{% set version = "0.2.4" %}
+{% set version = "0.2.5" %}
 
 package:
   name: utide
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/U/UTide/UTide-{{ version }}.tar.gz
-  sha256: 21999e12ddb8511b92525e3a6e8d5309e5ab92b9f0dc24c666d9f65c734c66a9
+  sha256: f976ccafdf8392682d5db083b220cdb999b265c9148459f3d7e1a8b8b6e25e47
 
 build:
   number: 0
