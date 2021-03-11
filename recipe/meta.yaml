@@ -11,20 +11,25 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
+    - setuptools-scm
   run:
-    - python
+    - python >=3.6
     - numpy
     - scipy
 
 test:
   imports:
     - utide
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/wesleybowman/UTide
