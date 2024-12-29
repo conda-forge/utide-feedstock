@@ -5,21 +5,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/U/UTide/UTide-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/U/UTide/UTide-{{ version }}.tar.gz
   sha256: 911a41fd8c838ae8d6a0b09e2570e8d849c10b4fc7a078da2810d9d1a9d22429
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools-scm
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - scipy
 
@@ -30,6 +30,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/wesleybowman/UTide
