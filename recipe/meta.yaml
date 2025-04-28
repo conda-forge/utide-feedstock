@@ -1,25 +1,25 @@
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: utide
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/U/UTide/UTide-{{ version }}.tar.gz
-  sha256: 911a41fd8c838ae8d6a0b09e2570e8d849c10b4fc7a078da2810d9d1a9d22429
+  url: https://pypi.org/packages/source/U/UTide/utide-{{ version }}.tar.gz
+  sha256: 5b8fc6e0227c53c10320f35a84680b703d5b445220aea0d1f0ebf9ec7a620f51
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools-scm
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - scipy
 
@@ -30,6 +30,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/wesleybowman/UTide
