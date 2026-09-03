@@ -1,0 +1,48 @@
+schema_version: 1
+
+context:
+  version: "0.4.0"
+
+package:
+  name: utide
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/u/utide/utide-${{ version }}.tar.gz
+  sha256: 5293fc10d52b37ff8092a2b99c20dbdd84b6a3e30dc8c013e28610491882ce55
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=42
+    - setuptools-scm
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - numpy >=2
+    - scipy
+
+tests:
+  - python:
+      imports:
+        - utide
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Python distribution of the MatLab package UTide
+  license: MIT
+  license_file: LICENSE.txt
+  homepage: https://pypi.org/project/utide/
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
+    - wesleybowman
